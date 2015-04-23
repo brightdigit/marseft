@@ -10,6 +10,8 @@ import Foundation
 
 public struct ConfigurationElement {
   let element:AnyObject
+	let keys:[String]?
+	/*
   let general:GeneralSettings
   
   public var debugKey:String {
@@ -22,14 +24,22 @@ public struct ConfigurationElement {
     case .Pro: return "pro"
     }
   }
+*/
   
   public var value:AnyObject {
-    if let map = element as? [String: AnyObject] {
+    if let map = element as? [String: AnyObject], keys = self.keys {
+			/*
       if let de: AnyObject = map[self.debugKey] {
         return de
       } else if let ee: AnyObject = map[self.editionKey] {
         return ee
       }
+*/
+			for key in keys {
+				if let child:AnyObject = map[key] {
+					return child
+				}
+			}
     }
     return element
   }
@@ -53,7 +63,7 @@ public struct ConfigurationElement {
   
   public subscript(key: String) -> ConfigurationElement? {
     if let item: AnyObject = self.value[key] {
-      return ConfigurationElement(element: item, general: self.general)
+      return ConfigurationElement(element: item, keys: self.keys)
     } else {
       return nil
     }
