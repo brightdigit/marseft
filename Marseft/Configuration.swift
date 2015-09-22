@@ -8,24 +8,21 @@
 
 import Foundation
 
-public typealias Decipher = (string: String, error: NSErrorPointer) -> [String : AnyObject]?
+public typealias Decipher = (string: String) throws -> [String : AnyObject]?
 
 public struct Configuration {
-  let error:NSError?
   let data:[String:AnyObject]?
 	let keys: [String]?
   
-	public init (configuration: String, keys: [String]? = nil, decipher: Decipher? = nil) {
-    var error: NSError? = nil
+	public init (configuration: String, keys: [String]? = nil, decipher: Decipher? = nil) throws {
 		let actualDecipher:Decipher
 		if decipher != nil {
 			actualDecipher = decipher!
 		} else {
 			actualDecipher = Configuration.decipher
 		}
-    self.data = actualDecipher(string: configuration, error: &error)
+    self.data = try actualDecipher(string: configuration)
 		self.keys = keys
-    self.error = error != nil ? Error(innerError: error!) : nil
   }
 	
   public subscript(key: String) -> ConfigurationElement? {
@@ -37,22 +34,17 @@ public struct Configuration {
   }
 	
 	
-	static func decipher (string: String, error: NSErrorPointer) -> [String : AnyObject]? {
-		if let data = NSData(base64EncodedString: string, options: NSDataBase64DecodingOptions.allZeros) {
-			let str = NSString(data: data, encoding: NSUTF8StringEncoding)
+	static func decipher (string: String) throws -> [String : AnyObject]? {
+		if let data = NSData(base64EncodedString: string, options: NSDataBase64DecodingOptions()) {
 			if let uncompressed = data.gunzippedData() {
-				let str = NSString(data: uncompressed, encoding: NSUTF8StringEncoding)
-				var jsonError:NSError? = nil
-				if let jsonData = NSJSONSerialization.JSONObjectWithData(uncompressed, options: NSJSONReadingOptions.allZeros, error: &jsonError) as? [String : AnyObject] {
+				if let jsonData = try NSJSONSerialization.JSONObjectWithData(uncompressed, options: NSJSONReadingOptions()) as? [String : AnyObject] {
 					return jsonData
 				}
 			} else {
-				error.memory = Error(type: .Decompression)
-				return nil
+				throw Error.Decompression
 			}
 		} else {
-			error.memory = Error(type: .StringNSData)
-			return nil
+			throw  Error.StringNSData
 		}
 		return nil
 	}

@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 BrightDigit. All rights reserved.
 //
 
+public enum Error: ErrorType {
+  case Decompression, StringNSData
+}
+/*
 import Foundation
 
 public typealias ErrorInfo = (code: Int, description: String)
@@ -61,3 +65,4 @@ public class Error : NSError {
       fatalError("init(coder:) has not been implemented")
   }
 }
+*/
