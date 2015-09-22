@@ -13,9 +13,9 @@
 		7BBBF9E31AE95153002F283B /* ConfigurationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBF9E01AE94F04002F283B /* ConfigurationElement.swift */; };
 		7BBBF9E61AE951D6002F283B /* GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BBBF9E41AE951D6002F283B /* GZIP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7BBBF9E71AE951D6002F283B /* GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBF9E51AE951D6002F283B /* GZIP.m */; };
-		7BBBF9E91AE95261002F283B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBBF9E81AE95261002F283B /* libz.dylib */; };
 		7BBBF9EB1AE95398002F283B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBF9DF1AE94F04002F283B /* Configuration.swift */; };
 		7BBBF9ED1AE95489002F283B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBF9EC1AE95489002F283B /* Error.swift */; };
+		B30B360D1BB1A6A3003335B7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B30B360C1BB1A6A3003335B7 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,8 @@
 		7BBBF9E01AE94F04002F283B /* ConfigurationElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationElement.swift; sourceTree = "<group>"; };
 		7BBBF9E41AE951D6002F283B /* GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZIP.h; path = GZIP/GZIP/GZIP.h; sourceTree = SOURCE_ROOT; };
 		7BBBF9E51AE951D6002F283B /* GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZIP.m; path = GZIP/GZIP/GZIP.m; sourceTree = SOURCE_ROOT; };
-		7BBBF9E81AE95261002F283B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		7BBBF9EC1AE95489002F283B /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		B30B360C1BB1A6A3003335B7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BBBF9E91AE95261002F283B /* libz.dylib in Frameworks */,
+				B30B360D1BB1A6A3003335B7 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +66,7 @@
 		7BBBF9A61AE94D8B002F283B = {
 			isa = PBXGroup;
 			children = (
-				7BBBF9E81AE95261002F283B /* libz.dylib */,
+				B30B360C1BB1A6A3003335B7 /* libz.tbd */,
 				7BBBF9B21AE94D8B002F283B /* Marseft */,
 				7BBBF9BF1AE94D8B002F283B /* MarseftTests */,
 				7BBBF9B11AE94D8B002F283B /* Products */,
