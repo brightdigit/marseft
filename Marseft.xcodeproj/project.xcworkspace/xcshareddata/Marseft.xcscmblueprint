@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "01B9627D5F12933CA235F641AF2345BCC9F9C66F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F1EBB6573C1DD39E76D51C36015D98BBF30745A7" : 0,
+    "6ACBD9B75A9AF01FED3B43D5A1DC054996850174" : 0,
+    "01B9627D5F12933CA235F641AF2345BCC9F9C66F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A7073BF7-13AC-40FD-BB67-0313D6A47E75",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F1EBB6573C1DD39E76D51C36015D98BBF30745A7" : "..",
+    "6ACBD9B75A9AF01FED3B43D5A1DC054996850174" : "marseft\/GZIP\/",
+    "01B9627D5F12933CA235F641AF2345BCC9F9C66F" : "marseft\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Marseft",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Marseft.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/brightdigit\/marseft.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01B9627D5F12933CA235F641AF2345BCC9F9C66F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nicklockwood\/GZIP.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6ACBD9B75A9AF01FED3B43D5A1DC054996850174"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/brightdigit\/tictalktoc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F1EBB6573C1DD39E76D51C36015D98BBF30745A7"
+    }
+  ]
+}

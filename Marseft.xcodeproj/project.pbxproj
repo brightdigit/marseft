@@ -11,11 +11,10 @@
 		7BBBF9BC1AE94D8B002F283B /* Marseft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBBF9B01AE94D8B002F283B /* Marseft.framework */; };
 		7BBBF9C31AE94D8B002F283B /* MarseftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBF9C21AE94D8B002F283B /* MarseftTests.swift */; };
 		7BBBF9E31AE95153002F283B /* ConfigurationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBF9E01AE94F04002F283B /* ConfigurationElement.swift */; };
-		7BBBF9E61AE951D6002F283B /* GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BBBF9E41AE951D6002F283B /* GZIP.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7BBBF9E71AE951D6002F283B /* GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBF9E51AE951D6002F283B /* GZIP.m */; };
 		7BBBF9EB1AE95398002F283B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBF9DF1AE94F04002F283B /* Configuration.swift */; };
 		7BBBF9ED1AE95489002F283B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBF9EC1AE95489002F283B /* Error.swift */; };
-		B30B360D1BB1A6A3003335B7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B30B360C1BB1A6A3003335B7 /* libz.tbd */; };
+		B3199D171BB64418000AA16D /* NSData+GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = B3199D151BB64418000AA16D /* NSData+GZIP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3199D181BB64418000AA16D /* NSData+GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = B3199D161BB64418000AA16D /* NSData+GZIP.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +36,9 @@
 		7BBBF9C21AE94D8B002F283B /* MarseftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarseftTests.swift; sourceTree = "<group>"; };
 		7BBBF9DF1AE94F04002F283B /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		7BBBF9E01AE94F04002F283B /* ConfigurationElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationElement.swift; sourceTree = "<group>"; };
-		7BBBF9E41AE951D6002F283B /* GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZIP.h; path = GZIP/GZIP/GZIP.h; sourceTree = SOURCE_ROOT; };
-		7BBBF9E51AE951D6002F283B /* GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZIP.m; path = GZIP/GZIP/GZIP.m; sourceTree = SOURCE_ROOT; };
 		7BBBF9EC1AE95489002F283B /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		B30B360C1BB1A6A3003335B7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B3199D151BB64418000AA16D /* NSData+GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+GZIP.h"; path = "GZIP/GZIP/NSData+GZIP.h"; sourceTree = SOURCE_ROOT; };
+		B3199D161BB64418000AA16D /* NSData+GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+GZIP.m"; path = "GZIP/GZIP/NSData+GZIP.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +46,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B30B360D1BB1A6A3003335B7 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +63,6 @@
 		7BBBF9A61AE94D8B002F283B = {
 			isa = PBXGroup;
 			children = (
-				B30B360C1BB1A6A3003335B7 /* libz.tbd */,
 				7BBBF9B21AE94D8B002F283B /* Marseft */,
 				7BBBF9BF1AE94D8B002F283B /* MarseftTests */,
 				7BBBF9B11AE94D8B002F283B /* Products */,
@@ -85,7 +81,8 @@
 		7BBBF9B21AE94D8B002F283B /* Marseft */ = {
 			isa = PBXGroup;
 			children = (
-				7BBBF9EA1AE95273002F283B /* GZIP */,
+				B3199D151BB64418000AA16D /* NSData+GZIP.h */,
+				B3199D161BB64418000AA16D /* NSData+GZIP.m */,
 				7BBBF9DF1AE94F04002F283B /* Configuration.swift */,
 				7BBBF9EC1AE95489002F283B /* Error.swift */,
 				7BBBF9E01AE94F04002F283B /* ConfigurationElement.swift */,
@@ -120,15 +117,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7BBBF9EA1AE95273002F283B /* GZIP */ = {
-			isa = PBXGroup;
-			children = (
-				7BBBF9E41AE951D6002F283B /* GZIP.h */,
-				7BBBF9E51AE951D6002F283B /* GZIP.m */,
-			);
-			name = GZIP;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -136,8 +124,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BBBF9E61AE951D6002F283B /* GZIP.h in Headers */,
 				7BBBF9B61AE94D8B002F283B /* Marseft.h in Headers */,
+				B3199D171BB64418000AA16D /* NSData+GZIP.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,10 +226,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3199D181BB64418000AA16D /* NSData+GZIP.m in Sources */,
 				7BBBF9ED1AE95489002F283B /* Error.swift in Sources */,
 				7BBBF9EB1AE95398002F283B /* Configuration.swift in Sources */,
 				7BBBF9E31AE95153002F283B /* ConfigurationElement.swift in Sources */,
-				7BBBF9E71AE951D6002F283B /* GZIP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +345,7 @@
 		7BBBF9C71AE94D8B002F283B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -367,12 +356,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		7BBBF9C81AE94D8B002F283B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
