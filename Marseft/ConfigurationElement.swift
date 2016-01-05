@@ -8,33 +8,12 @@
 
 import Foundation
 
-public struct ConfigurationElement {
+public struct ConfigurationElement : ConfigurationElementable {
   let element:AnyObject
 	let keys:[String]?
-	/*
-  let general:GeneralSettings
-  
-  public var debugKey:String {
-    return general.debug ? "debug" : "release"
-  }
-  
-  public var editionKey:String {
-    switch general.edition {
-    case .Lite: return "lite"
-    case .Pro: return "pro"
-    }
-  }
-*/
   
   public var value:AnyObject {
     if let map = element as? [String: AnyObject], keys = self.keys {
-			/*
-      if let de: AnyObject = map[self.debugKey] {
-        return de
-      } else if let ee: AnyObject = map[self.editionKey] {
-        return ee
-      }
-*/
 			for key in keys {
 				if let child:AnyObject = map[key] {
 					return child
@@ -61,7 +40,7 @@ public struct ConfigurationElement {
     return boolValue ?? defaultValue
   }
   
-  public subscript(key: String) -> ConfigurationElement? {
+  public subscript(key: String) -> ConfigurationElementable? {
     if let item: AnyObject = self.value[key] {
       return ConfigurationElement(element: item, keys: self.keys)
     } else {

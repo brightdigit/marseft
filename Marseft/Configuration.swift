@@ -10,7 +10,19 @@ import Foundation
 
 public typealias Decipher = (string: String) throws -> [String : AnyObject]?
 
-public struct Configuration {
+public protocol ConfigurationElementLookup {
+  subscript(key: String) -> ConfigurationElementable? { get }
+}
+
+public protocol ConfigurationElementable : ConfigurationElementLookup {
+  var value:AnyObject { get }
+  var string: String? { get }
+  var int: Int? { get }
+  var timeInterval: NSTimeInterval?  { get }
+  func bool (defaultValue: Bool) -> Bool
+}
+
+public struct Configuration : ConfigurationElementLookup {
   let data:[String:AnyObject]?
 	let keys: [String]?
   
@@ -25,7 +37,7 @@ public struct Configuration {
 		self.keys = keys
   }
 	
-  public subscript(key: String) -> ConfigurationElement? {
+  public subscript(key: String) -> ConfigurationElementable? {
     if let item: AnyObject = self.data?[key] {
 			return ConfigurationElement(element: item, keys: keys)
     } else {
