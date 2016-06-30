@@ -18,7 +18,7 @@ public protocol ConfigurationElementable : ConfigurationElementLookup {
   var value:AnyObject { get }
   var string: String? { get }
   var int: Int? { get }
-  var timeInterval: NSTimeInterval?  { get }
+  var timeInterval: TimeInterval?  { get }
   func bool (defaultValue: Bool) -> Bool
 }
 
@@ -47,11 +47,16 @@ public struct Configuration : ConfigurationElementLookup {
 	
 	
 	static func decipher (string: String) throws -> [String : AnyObject]? {
-		if let data = NSData(base64EncodedString: string, options: NSDataBase64DecodingOptions()) {
-			if let uncompressed = data.gunzippedData() {
-				if let jsonData = try NSJSONSerialization.JSONObjectWithData(uncompressed, options: NSJSONReadingOptions()) as? [String : AnyObject] {
-					return jsonData
-				}
+    
+		if let data = NSData(base64Encoded: string) {
+			if let uncompressed = data.gunzipped() {
+        do {
+          if let jsonData = try JSONSerialization.jsonObject(with: uncompressed, options: JSONSerialization.ReadingOptions()) as? [String : AnyObject] {
+            return jsonData
+          }
+        } catch let error {
+          throw Error.Deserialization(parent: error)
+        }
 			} else {
 				throw Error.Decompression
 			}

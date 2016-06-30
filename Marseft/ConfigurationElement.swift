@@ -31,8 +31,8 @@ public struct ConfigurationElement : ConfigurationElementable {
     return self.value as? Int
   }
   
-  public var timeInterval: NSTimeInterval? {
-    return self.value as? NSTimeInterval
+  public var timeInterval: TimeInterval? {
+    return self.value as? TimeInterval
   }
   
   public func bool (defaultValue: Bool) -> Bool {
