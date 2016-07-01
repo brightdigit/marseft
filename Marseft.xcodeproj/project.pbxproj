@@ -39,6 +39,7 @@
 		7BBBF9EC1AE95489002F283B /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		B3199D151BB64418000AA16D /* NSData+GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+GZIP.h"; path = "GZIP/NSData+GZIP.h"; sourceTree = SOURCE_ROOT; };
 		B3199D161BB64418000AA16D /* NSData+GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+GZIP.m"; path = "GZIP/NSData+GZIP.m"; sourceTree = SOURCE_ROOT; };
+		B3DCE14F1D26969B00C8DC5B /* Data.GZIP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.GZIP.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +89,7 @@
 				7BBBF9E01AE94F04002F283B /* ConfigurationElement.swift */,
 				7BBBF9B51AE94D8B002F283B /* Marseft.h */,
 				7BBBF9B31AE94D8B002F283B /* Supporting Files */,
+				B3DCE14F1D26969B00C8DC5B /* Data.GZIP.swift */,
 			);
 			path = Marseft;
 			sourceTree = "<group>";
