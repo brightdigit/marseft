@@ -7,5 +7,5 @@
 //
 
 public enum Error: ErrorProtocol {
-  case Decompression, StringNSData, Deserialization(parent: ErrorProtocol)
+  case decompression, base64, deserialization(parent: ErrorProtocol)
 }

@@ -35,7 +35,7 @@ public struct ConfigurationElement : ConfigurationElementable {
     return self.value as? TimeInterval
   }
   
-  public func bool (defaultValue: Bool) -> Bool {
+  public func bool (_ defaultValue: Bool) -> Bool {
     let boolValue = self.value as? Bool
     return boolValue ?? defaultValue
   }

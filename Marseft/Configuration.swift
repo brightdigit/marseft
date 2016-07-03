@@ -19,7 +19,7 @@ public protocol ConfigurationElementable : ConfigurationElementLookup {
   var string: String? { get }
   var int: Int? { get }
   var timeInterval: TimeInterval?  { get }
-  func bool (defaultValue: Bool) -> Bool
+  func bool (_ defaultValue: Bool) -> Bool
 }
 
 public struct Configuration : ConfigurationElementLookup {
@@ -46,7 +46,7 @@ public struct Configuration : ConfigurationElementLookup {
   }
 	
 	
-	static func decipher (string: String) throws -> [String : AnyObject]? {
+	static func decipher (_ string: String) throws -> [String : AnyObject]? {
     
 		if let data = NSData(base64Encoded: string) {
 			if let uncompressed = data.gunzipped() {
@@ -55,13 +55,13 @@ public struct Configuration : ConfigurationElementLookup {
             return jsonData
           }
         } catch let error {
-          throw Error.Deserialization(parent: error)
+          throw Error.deserialization(parent: error)
         }
 			} else {
-				throw Error.Decompression
+				throw Error.decompression
 			}
 		} else {
-			throw  Error.StringNSData
+			throw  Error.base64
 		}
 		return nil
 	}
