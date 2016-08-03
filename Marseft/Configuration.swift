@@ -55,13 +55,13 @@ public struct Configuration : ConfigurationElementLookup {
             return jsonData
           }
         } catch let error {
-          throw Error.deserialization(parent: error)
+          throw MarseftError.deserialization(parent: error)
         }
 			} else {
-				throw Error.decompression
+				throw MarseftError.decompression
 			}
 		} else {
-			throw  Error.base64
+			throw MarseftError.base64
 		}
 		return nil
 	}

@@ -6,6 +6,6 @@
 //  Copyright (c) 2015 BrightDigit. All rights reserved.
 //
 
-public enum Error: ErrorProtocol {
-  case decompression, base64, deserialization(parent: ErrorProtocol)
+public enum MarseftError: Error {
+  case decompression, base64, deserialization(parent: Error)
 }

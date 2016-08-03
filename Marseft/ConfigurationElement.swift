@@ -13,7 +13,7 @@ public struct ConfigurationElement : ConfigurationElementable {
 	let keys:[String]?
   
   public var value:AnyObject {
-    if let map = element as? [String: AnyObject], keys = self.keys {
+    if let map = element as? [String: AnyObject], let keys = self.keys {
 			for key in keys {
 				if let child:AnyObject = map[key] {
 					return child
