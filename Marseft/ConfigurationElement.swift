@@ -23,6 +23,10 @@ public struct ConfigurationElement : ConfigurationElementable {
     return element
   }
   
+  public var dictionary: [String:AnyObject]? {
+    return self.value as? [String:AnyObject]
+  }
+  
   public var string: String? {
     return self.value as? String
   }
@@ -41,7 +45,7 @@ public struct ConfigurationElement : ConfigurationElementable {
   }
   
   public subscript(key: String) -> ConfigurationElementable? {
-    if let item: AnyObject = self.value[key] {
+    if let item = self.dictionary?[key] {
       return ConfigurationElement(element: item, keys: self.keys)
     } else {
       return nil

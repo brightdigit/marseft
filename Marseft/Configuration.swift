@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias Decipher = (string: String) throws -> [String : AnyObject]?
+public typealias Decipher = (_ string: String) throws -> [String : AnyObject]?
 
 public protocol ConfigurationElementLookup {
   subscript(key: String) -> ConfigurationElementable? { get }
@@ -33,7 +33,7 @@ public struct Configuration : ConfigurationElementLookup {
 		} else {
 			actualDecipher = Configuration.decipher
 		}
-    self.data = try actualDecipher(string: configuration)
+    self.data = try actualDecipher(configuration)
 		self.keys = keys
   }
 	
